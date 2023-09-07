@@ -25,6 +25,12 @@ tasks.withType<Detekt>().configureEach {
     }
 }
 
+tasks.register("detektAll") {
+    allprojects {
+        this@register.dependsOn(tasks.withType<Detekt>())
+    }
+}
+
 subprojects {
     afterEvaluate {
         extensions.findByType<KotlinProjectExtension>()?.apply {
