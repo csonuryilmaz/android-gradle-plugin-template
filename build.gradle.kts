@@ -8,6 +8,8 @@ plugins {
 }
 
 detekt {
+    apply(plugin = "io.gitlab.arturbosch.detekt")
+
     buildUponDefaultConfig = true // preconfigure defaults
     allRules = false // activate all available (even unstable) rules.
 }
